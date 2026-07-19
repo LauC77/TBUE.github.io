@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tres bolsas, una esquina — Blog para Canva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F4EC;
+    --paper:#FFFFFF;
+    --forest:#2E5A38;
+    --forest-deep:#22452B;
+    --leaf:#6FAE52;
+    --ink:#1D2721;
+    --muted:#5C6B60;
+    --tint:#EAF0E6;
+    --line:#DED8CB;
+    --shadow:0 18px 40px -24px rgba(29,39,33,.45);
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Figtree",system-ui,-apple-system,sans-serif;
+    font-size:18px;
+    line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.01em;}
+  p{margin:0 0 1.1rem;}
+  strong{font-weight:600;}
+  a{color:var(--forest);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
+
+  /* three-color signature motif */
+  .code-bar{display:flex;height:8px;width:100%;}
+  .code-bar span{flex:1;}
+  .sw-white{background:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(29,39,33,.12);}
+  .sw-green{background:var(--leaf);}
+  .sw-black{background:var(--ink);}
+
+  section{padding:76px 0;}
+  .eyebrow{
+    font-family:"Figtree",sans-serif;font-weight:700;font-size:.78rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin:0 0 14px;
+  }
+  .section-title{font-size:clamp(1.9rem,4.2vw,2.7rem);margin:0 0 8px;color:var(--forest-deep);}
+  .section-sub{font-size:1.05rem;color:var(--muted);margin:0 0 26px;font-weight:500;}
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(120% 80% at 85% -10%, rgba(111,174,82,.28), transparent 60%),
+      linear-gradient(160deg,var(--forest) 0%, var(--forest-deep) 100%);
+    color:#F4F6F0;padding:0;position:relative;overflow:hidden;
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;padding:96px 26px 84px;position:relative;z-index:2;}
+  .hero .eyebrow{color:#BFE0A9;}
+  .hero h1{
+    font-size:clamp(2.8rem,9vw,5.4rem);color:#FDFDF9;margin:6px 0 20px;font-weight:700;
+    letter-spacing:-.02em;
+  }
+  .hero .lead{font-size:clamp(1.1rem,2.6vw,1.4rem);color:#DCE7D3;max-width:34ch;margin:0 0 40px;}
+  .hero-meta{border-top:1px solid rgba(255,255,255,.22);padding-top:20px;font-size:.98rem;color:#CBD8C2;}
+  .hero-meta strong{color:#FFFFFF;font-weight:600;}
+  .hero-bags{position:absolute;right:-30px;bottom:-20px;width:min(46%,340px);opacity:.9;z-index:1;}
+  @media(max-width:640px){.hero-bags{display:none;}}
+
+  /* alternating surfaces */
+  .s-cream{background:var(--cream);}
+  .s-paper{background:var(--paper);}
+  .s-tint{background:var(--tint);}
+  .s-forest{background:var(--forest-deep);color:#EAF1E4;}
+  .s-forest .section-title{color:#FFFFFF;}
+  .s-forest .eyebrow{color:#BFE0A9;}
+  .s-forest p{color:#D5E2CC;}
+
+  /* entry label chip */
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:#fff;
+    font-family:"Figtree";font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:7px 14px;border-radius:100px;margin-bottom:18px;
+  }
+  .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);}
+
+  /* photo / media placeholder */
+  .photo{
+    border:2px dashed var(--leaf);border-radius:16px;background:rgba(111,174,82,.07);
+    padding:30px 26px;text-align:center;color:var(--forest);margin:26px 0;
+  }
+  .photo .ico{font-size:1.5rem;}
+  .photo .cap{font-weight:600;color:var(--forest-deep);margin:8px 0 4px;font-size:1rem;}
+  .photo .hint{font-size:.86rem;color:var(--muted);margin:0;}
+  .photo .hint b{color:var(--forest);}
+
+  /* color code cards */
+  .codes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:14px 0 26px;}
+  @media(max-width:680px){.codes{grid-template-columns:1fr;}}
+  .cc{border-radius:18px;padding:26px 22px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .cc h3{font-size:1.35rem;margin:0 0 6px;}
+  .cc .cc-lead{font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;}
+  .cc p{font-size:.98rem;margin:0;line-height:1.55;}
+  .cc .bag{width:44px;height:44px;margin-bottom:14px;}
+  .cc-white{background:#fff;color:var(--ink);border:1px solid var(--line);}
+  .cc-white .cc-lead{color:#8A8570;}
+  .cc-green{background:var(--leaf);color:#12341A;}
+  .cc-green .cc-lead{color:#1f5227;}
+  .cc-black{background:var(--ink);color:#F1F3EE;}
+  .cc-black .cc-lead{color:#9DB79A;}
+  .code-foot{font-size:.95rem;color:var(--muted);border-left:3px solid var(--leaf);padding-left:16px;}
+
+  /* steps / acciones */
+  .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:12px;}
+  @media(max-width:640px){.steps{grid-template-columns:1fr;}}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 20px;}
+  .step .n{font-family:"Fraunces";font-weight:700;font-size:1.6rem;color:var(--leaf);line-height:1;}
+  .step h3{font-size:1.15rem;margin:10px 0 6px;color:var(--forest-deep);}
+  .step p{font-size:.95rem;margin:0;color:var(--muted);}
+
+  /* objectives */
+  .obj-general{background:var(--tint);border-radius:16px;padding:24px 24px;margin:6px 0 26px;font-size:1.05rem;}
+  ol.spec{margin:0;padding-left:0;list-style:none;counter-reset:o;}
+  ol.spec li{position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--line);counter-increment:o;}
+  ol.spec li:last-child{border-bottom:none;}
+  ol.spec li::before{
+    content:counter(o);position:absolute;left:0;top:12px;width:30px;height:30px;border-radius:50%;
+    background:var(--forest);color:#fff;font-family:"Fraunces";font-weight:600;font-size:.95rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* map */
+  .map-frame{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);margin:22px 0 8px;}
+  .map-frame iframe{display:block;width:100%;height:340px;border:0;}
+  .caption{font-size:.85rem;color:var(--muted);font-style:italic;margin:8px 0 0;}
+
+  /* references */
+  .refs{list-style:none;margin:0;padding:0;}
+  .refs li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.95rem;line-height:1.5;}
+  .refs li:last-child{border-bottom:none;}
+  .s-forest .refs li{color:#D5E2CC;}
+
+  /* Canva guide */
+  .guide{background:#20301F;color:#E7EFDF;}
+  .guide .section-title{color:#fff;}
+  .guide .eyebrow{color:#BFE0A9;}
+  .guide h3{color:#fff;font-size:1.2rem;margin:26px 0 8px;}
+  .guide p,.guide li{color:#CBD8C2;}
+  .guide ol,.guide ul{padding-left:20px;margin:0 0 8px;}
+  .guide li{margin-bottom:8px;font-size:.96rem;}
+  .guide .box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px 22px;margin:16px 0;}
+  .guide code{background:rgba(111,174,82,.2);color:#DCEFCB;padding:2px 7px;border-radius:6px;font-size:.85em;}
+  .check li{list-style:none;position:relative;padding-left:28px;}
+  .check{padding-left:0;}
+  .check li::before{content:"☐";position:absolute;left:0;color:var(--leaf);font-size:1.1rem;top:-1px;}
+
+  .foot{background:var(--ink);color:#9DB79A;text-align:center;padding:34px 20px;font-size:.85rem;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+  :focus-visible{outline:3px solid var(--leaf);outline-offset:3px;border-radius:4px;}
+</style>
+</head>
+<body>
+
+<!-- ===================== PORTADA ===================== -->
+<header class="hero">
+  <div class="code-bar"><span class="sw-white"></span><span class="sw-green"></span><span class="sw-black"></span></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Proyecto Social de Formación · PRAC1010</p>
+    <h1>Tres bolsas,<br>una esquina</h1>
+    <p class="lead">Separación de residuos en la fuente en el barrio Coovivienda, Chiquinquirá.</p>
+    <div class="hero-meta">
+      <strong>Laura Valentina Cañón Castro</strong><br>
+      Práctica en Responsabilidad Social · Chiquinquirá, Boyacá — 2026
+    </div>
+  </div>
+  <!-- three bags illustration -->
+  <svg class="hero-bags" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g opacity="0.95">
+      <path d="M40 120 q0 -14 14 -14 h40 q14 0 14 14 l10 96 q2 14 -12 14 h-64 q-14 0 -12 -14 z" fill="#ffffff"/>
+      <path d="M52 106 q6 -16 22 -16 q16 0 22 16" stroke="#22452B" stroke-width="6" fill="none"/>
+      <path d="M116 116 q0 -12 12 -12 h44 q12 0 12 12 l9 100 q2 14 -12 14 h-62 q-14 0 -12 -14 z" fill="#6FAE52"/>
+      <path d="M126 104 q7 -16 24 -16 q17 0 24 16" stroke="#22452B" stroke-width="6" fill="none"/>
+      <path d="M196 124 q0 -12 12 -12 h40 q12 0 12 12 l9 92 q2 14 -12 14 h-58 q-14 0 -12 -14 z" fill="#1D2721"/>
+      <path d="M206 112 q6 -16 22 -16 q16 0 22 16" stroke="#6FAE52" stroke-width="6" fill="none"/>
+    </g>
+  </svg>
+</header>
+
+<!-- ===================== PRESENTACIÓN ===================== -->
+<section class="s-cream">
+  <div class="wrap reveal">
+    <p class="eyebrow">Presentación</p>
+    <h2 class="section-title">Un cambio empieza en casa</h2>
+    <p>Este blog presenta el Proyecto Social de Formación <strong>Tres bolsas, una esquina</strong>, una iniciativa que busca sensibilizar a cinco familias del barrio Coovivienda, en Chiquinquirá (Boyacá), sobre la separación de residuos en la fuente y el cuidado del espacio que compartimos. Todo parte de una escena cotidiana: en la calle 26 #5A-48 se acumulan, casi cada madrugada, bolsas de residuos mezclados que esperan durante horas el paso del vehículo recolector.</p>
+    <p>La propuesta no pretende resolver el manejo de residuos de todo el municipio. Su apuesta es más pequeña y más honesta: <strong>observar</strong> lo que ocurre, <strong>dialogar</strong> con las familias, <strong>diseñar</strong> una pieza informativa sencilla sobre el código de colores y devolverla al barrio. Un cambio que empieza en casa, en una esquina, con tres bolsas.</p>
+    <div class="photo">
+      <div class="ico">🖼️</div>
+      <p class="cap">Aquí va una imagen amplia del territorio</p>
+      <p class="hint">Una ilustración sobre reciclaje o una foto general del barrio. En Canva busca: <b>reciclaje ilustración</b> · <b>medio ambiente comunidad</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ENTRADA 1 ===================== -->
+<section class="s-paper">
+  <div class="wrap reveal">
+    <span class="chip"><span class="dot"></span>Entrada 1</span>
+    <h2 class="section-title">Separar también es cuidar</h2>
+    <p class="section-sub">Innovación social y responsabilidad ambiental desde el hogar</p>
+
+    <p>La separación de residuos empieza en el hogar, pero sus efectos llegan a todo el barrio. Cuando en una misma bolsa se mezclan restos de comida, papel, plástico, vidrio y residuos sanitarios, se pierde la posibilidad de recuperar materiales aprovechables y crece la cantidad de basura que termina enterrada en el relleno sanitario. Por eso separar no es solo una tarea doméstica: es una forma de cuidar el barrio, de reducir impactos ambientales y de reconocer el valor de lo que todavía puede volver a usarse.</p>
+
+    <p>Este proyecto se apoya en la idea de <strong>innovación social</strong>. Según la <em>Ruta de Innovación Social</em> de UNIMINUTO (Pacheco Duarte et al., 2022), innovar en lo social no consiste en inventar una tecnología sofisticada, sino en comprender una necesidad real <strong>junto con</strong> las personas que la viven y proponer soluciones que la propia comunidad pueda apropiar. Esa misma ruta ofrece una pista que le dio sentido a este trabajo: una innovación se mide desde quien la adopta; si para una familia separar en tres bolsas es algo nuevo y posible, entonces ahí ya hay una innovación. En Coovivienda la solución no exige grandes recursos: parte de información clara, de diálogo y de cambios pequeños en la manera de sacar la basura.</p>
+
+    <p>El proyecto también asume que un problema así no se entiende desde una sola disciplina. Como plantean Reyna Cruz, Carreón Corona y Armijo Mena (2019), los fenómenos sociales son complejos y requieren la <strong>interrelación de distintas miradas</strong> para abordarlos con rigor; reducirlos a una sola dimensión deja por fuera buena parte de lo que está en juego. La acumulación de residuos en una esquina es, al mismo tiempo:</p>
+
+    <p style="margin-left:6px">🌱 <strong>ambiental</strong>, por la contaminación del suelo y el agua y por la pérdida de materiales;<br>
+    🤝 <strong>social</strong>, porque afecta la convivencia y la salud de vecinos, niños y adultos mayores;<br>
+    🏠 <strong>cultural</strong>, porque se sostiene en hábitos cotidianos y en la idea de que la basura deja de ser nuestra al cruzar la puerta;<br>
+    💰 <strong>económica</strong>, porque se desaprovechan materiales que aún tienen valor y se encarece el trabajo de los recicladores;<br>
+    📋 <strong>y política</strong>, porque existen normas y planes —como el código de colores— que están vigentes pero no se cumplen.</p>
+
+    <p>Por eso el cambio no depende de una sola persona ni de una sola entidad. Depende de la <strong>corresponsabilidad</strong> entre los hogares que separan, la comunidad que cuida el espacio común, los recicladores de oficio que recuperan materiales y las instituciones que deben hacer cumplir lo que ya está escrito. Separar, en el fondo, también es cuidar: cuidar el barrio, cuidar a quien recicla y cuidar lo que todavía sirve.</p>
+
+    <div class="photo">
+      <div class="ico">🖼️</div>
+      <p class="cap">Imagen recomendada para esta entrada</p>
+      <p class="hint">Manos separando residuos o una escena de reciclaje. En Canva busca: <b>manos separando residuos</b> · <b>reciclaje hogar</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CÓDIGO DE COLORES ===================== -->
+<section class="s-tint">
+  <div class="wrap reveal">
+    <p class="eyebrow">Guía práctica</p>
+    <h2 class="section-title">Tres colores para transformar una esquina</h2>
+    <div class="codes">
+      <div class="cc cc-white">
+        <svg class="bag" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 16q0-3 3-3h18q3 0 3 3l2 18q0 3-3 3H9q-3 0-3-3z" fill="#EDEBE2" stroke="#1D2721" stroke-width="1.6"/><path d="M12 13q3-6 8-6t8 6" stroke="#1D2721" stroke-width="2.2" fill="none"/></svg>
+        <p class="cc-lead">Blanco</p>
+        <h3>Aprovechables</h3>
+        <p>Papel, cartón, plástico, vidrio y metales, siempre <strong>limpios y secos</strong>.</p>
+      </div>
+      <div class="cc cc-green">
+        <svg class="bag" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 16q0-3 3-3h18q3 0 3 3l2 18q0 3-3 3H9q-3 0-3-3z" fill="#5B9A41" stroke="#12341A" stroke-width="1.6"/><path d="M12 13q3-6 8-6t8 6" stroke="#12341A" stroke-width="2.2" fill="none"/></svg>
+        <p class="cc-lead">Verde</p>
+        <h3>Orgánicos</h3>
+        <p>Cáscaras, restos de alimentos y residuos de jardín.</p>
+      </div>
+      <div class="cc cc-black">
+        <svg class="bag" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 16q0-3 3-3h18q3 0 3 3l2 18q0 3-3 3H9q-3 0-3-3z" fill="#2B332C" stroke="#6FAE52" stroke-width="1.6"/><path d="M12 13q3-6 8-6t8 6" stroke="#6FAE52" stroke-width="2.2" fill="none"/></svg>
+        <p class="cc-lead">Negro</p>
+        <h3>No aprovechables</h3>
+        <p>Pañales, papel higiénico, servilletas usadas y empaques contaminados.</p>
+      </div>
+    </div>
+    <p class="code-foot">Separar desde casa evita que los reciclables se contaminen y facilita su aprovechamiento. Código de colores de la Resolución 2184 de 2019.</p>
+    <div class="photo">
+      <div class="ico">♻️</div>
+      <p class="cap">Puedes reemplazar los recuadros por una foto de canecas</p>
+      <p class="hint">En Canva busca: <b>canecas reciclaje colores</b> · <b>separación residuos</b>. Mantén el orden blanco – verde – negro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ENTRADA 2 ===================== -->
+<section class="s-paper">
+  <div class="wrap reveal">
+    <span class="chip"><span class="dot"></span>Entrada 2</span>
+    <h2 class="section-title">Coovivienda separa: cuidar el barrio empieza en casa</h2>
+    <p class="section-sub">Esta entrada presenta la problemática que da origen al proyecto, el territorio donde se desarrolla, los objetivos que persigue y las razones que lo justifican.</p>
+  </div>
+</section>
+
+<!-- Problemática -->
+<section class="s-cream" style="padding-top:20px">
+  <div class="wrap reveal">
+    <p class="eyebrow">La situación</p>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,3.6vw,2.2rem)">La problemática identificada</h2>
+    <p>En la calle 26 #5A-48 del barrio Coovivienda se identificó un <strong>punto crítico</strong> de acumulación de residuos. Aproximadamente seis viviendas depositan bolsas de basura de forma recurrente, casi siempre desde la madrugada y varias horas antes de que pase el vehículo recolector. No existe una caneca comunitaria ni señalización que oriente la disposición adecuada.</p>
+    <p>En las bolsas se mezclan residuos orgánicos, pañales, papel, cartón, plástico, vidrio y otros materiales. Durante el tiempo que permanecen en el andén, animales y recicladores pueden abrirlas, lo que provoca dispersión de residuos, malos olores, moscas y presencia de roedores. Esta situación afecta el espacio común y expone especialmente a niños, niñas y personas mayores.</p>
+    <div class="photo">
+      <div class="ico">📷</div>
+      <p class="cap">Aquí va tu foto propia del punto crítico</p>
+      <p class="hint"><b>Importante:</b> no muestres rostros, placas de carros ni entradas de viviendas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contexto y ubicación -->
+<section class="s-paper">
+  <div class="wrap reveal">
+    <p class="eyebrow">Territorio</p>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,3.6vw,2.2rem)">El territorio y la comunidad</h2>
+    <p>El proyecto se desarrolla en el barrio Coovivienda, ubicado en la zona urbana de Chiquinquirá, Boyacá. La comunidad participante está conformada por <strong>cinco familias</strong> del sector de la calle 26 #5A-48, aproximadamente 20 personas. El proceso cuenta con el enlace comunitario de Jorge Eliécer Ávila Ballén, presidente de la Junta de Acción Comunal del barrio.</p>
+    <p>La ubicación aproximada del punto crítico corresponde a las coordenadas <strong>5.6202, -73.8087</strong>. Chiquinquirá es un municipio de importancia religiosa y cultural, por lo que el cuidado de los espacios públicos también contribuye al bienestar de residentes y visitantes.</p>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=5.6202,-73.8087&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del punto crítico en Coovivienda, Chiquinquirá"></iframe>
+    </div>
+    <p class="caption">Ubicación aproximada del punto crítico de residuos, barrio Coovivienda, Chiquinquirá.</p>
+    <div class="photo">
+      <div class="ico">🗺️</div>
+      <p class="cap">Inserta una captura de Google Maps + una o dos fotos del sector</p>
+      <p class="hint">Abre <b>https://www.google.com/maps?q=5.6202,-73.8087</b>, toma una captura y súbela. En Canva el mapa de arriba se reemplaza por tu imagen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Objetivos -->
+<section class="s-tint">
+  <div class="wrap reveal">
+    <p class="eyebrow">Hacia dónde vamos</p>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,3.6vw,2.2rem)">Objetivos del proyecto</h2>
+    <h3 style="font-family:'Fraunces';color:var(--forest-deep);margin:0 0 8px;font-size:1.15rem">Objetivo general</h3>
+    <div class="obj-general">
+      Sensibilizar a cinco familias del barrio Coovivienda, en Chiquinquirá (Boyacá), sobre la separación adecuada de residuos en la fuente conforme al código de colores y el cuidado del espacio común, mediante un proceso de observación, caracterización, diseño y socialización de una pieza informativa.
+    </div>
+    <h3 style="font-family:'Fraunces';color:var(--forest-deep);margin:0 0 6px;font-size:1.15rem">Objetivos específicos</h3>
+    <ol class="spec">
+      <li>Reconocer las prácticas de disposición y separación de residuos de las familias participantes mediante observación y encuesta inicial.</li>
+      <li>Identificar el nivel de conocimiento sobre los colores blanco, verde y negro, así como sobre el horario de recolección.</li>
+      <li>Diseñar y validar una pieza informativa clara sobre separación de residuos y cuidado del punto de disposición.</li>
+      <li>Socializar la pieza informativa con las familias y recoger sus dudas o recomendaciones.</li>
+      <li>Verificar al cierre si aumentó el número de hogares que identifica correctamente los tres colores.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Justificación -->
+<section class="s-paper">
+  <div class="wrap reveal">
+    <p class="eyebrow">El porqué</p>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,3.6vw,2.2rem)">¿Por qué actuar?</h2>
+    <p>La intervención es necesaria porque la disposición inadecuada de residuos afecta la limpieza, la convivencia y las condiciones sanitarias del barrio. Las bolsas mezcladas y expuestas en el andén pueden generar malos olores, atraer animales y facilitar la dispersión de residuos en el espacio público. Además, cuando los materiales reciclables se contaminan con restos orgánicos o sanitarios, se pierde la posibilidad de aprovecharlos.</p>
+    <p>Desde el ámbito <strong>académico</strong>, este proyecto permite aplicar observación, análisis del contexto, diálogo comunitario, planeación y evaluación de una propuesta concreta. Desde el ámbito <strong>científico</strong>, reconoce que el problema tiene dimensiones ambientales, sociales, culturales, económicas y políticas que deben leerse en conjunto. Desde el ámbito <strong>social</strong>, promueve acciones sencillas que aportan al cuidado colectivo del barrio y facilitan el trabajo de los recicladores de oficio.</p>
+    <p>El proyecto no promete resolver todo el manejo de residuos de Chiquinquirá. Su alcance es educar y acompañar a cinco familias para que reconozcan que la separación en la fuente es una acción cotidiana, posible y necesaria.</p>
+  </div>
+</section>
+
+<!-- Acciones -->
+<section class="s-cream">
+  <div class="wrap reveal">
+    <p class="eyebrow">El plan</p>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,3.6vw,2.2rem)">¿Cómo se realizará?</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Observar</h3><p>Visitar y caracterizar el punto crítico con registro fotográfico fechado.</p></div>
+      <div class="step"><div class="n">02</div><h3>Escuchar</h3><p>Aplicar una encuesta corta a los cinco hogares participantes.</p></div>
+      <div class="step"><div class="n">03</div><h3>Diseñar</h3><p>Crear una pieza informativa sobre los tres colores y el horario de recolección.</p></div>
+      <div class="step"><div class="n">04</div><h3>Socializar y evaluar</h3><p>Entregar la pieza, resolver dudas y verificar lo aprendido al cierre.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFERENCIAS ===================== -->
+<section class="s-forest">
+  <div class="wrap reveal">
+    <p class="eyebrow">Fuentes</p>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,3.6vw,2.2rem)">Referencias</h2>
+    <ul class="refs">
+      <li>Ministerio de Ambiente y Desarrollo Sostenible. (2019). <em>Resolución 2184 de 2019</em>. https://www.minvivienda.gov.co/sites/default/files/2020-12/abc-codigo_colores.pdf</li>
+      <li>Pacheco Duarte, J. F., et al. (2022). <em>Ruta de innovación social: Paso a paso para desarrollar innovaciones sociales</em> (Documento Técnico 02). Corporación Universitaria Minuto de Dios.</li>
+      <li>Reyna Cruz, W. E., Carreón Corona, A. L., &amp; Armijo Mena, S. G. (2019). La interrelación de diferentes disciplinas para el abordaje científico de fenómenos y problemas sociales. <em>Revista Latinoamericana de Metodología de las Ciencias Sociales, 9</em>(2).</li>
+      <li>Cañón Castro, L. V. (2026). <em>Formato de construcción del plan de trabajo vinculado al Proyecto Social de Formación</em> [Documento de trabajo].</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="foot">
+  Tres bolsas, una esquina · Proyecto Social de Formación · Laura Valentina Cañón Castro · Chiquinquirá, Boyacá — 2026
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
